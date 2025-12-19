@@ -8,122 +8,104 @@
   <title>Goshen Landing Page</title>
 </head>
 
-<body class="bg-white text-gray-900">
+<body class="bg-white text-black">
   <div id="app"></div>
   <div class="relative">
-    <!-- Hero Background Image -->
+
+    <!-- HERO BACKGROUND -->
     <div class="absolute inset-0 -z-10">
-      <img src="https://african.land/oc-content/uploads/4/2347.jpg"
-        alt="Modern luxury high-rise building in Lagos, Nigeria" class="h-full w-full object-cover" />
-      <div class="absolute inset-0 bg-secondary"></div> <!-- Dark overlay for text readability -->
+      <img src="./hero-bg.jpg" alt="Modern high-rise building in Lagos" class="h-full w-full object-cover" />
+      <!-- Dark overlay -->
+      <div class="absolute inset-0 bg-secondary"></div>
     </div>
 
-    <!-- Header/Navigation -->
-    <header class="relative inset-x-0 top-0 z-50">
-      <nav aria-label="Global" class="flex items-center justify-between p-6 lg:px-8">
-        <div class="flex lg:flex-1">
-          <a href="#" class="-m-1.5 p-1.5">
-            <span class="sr-only">Goshen Habitat</span>
-            <img src="/Logo.png" alt="Goshen Habitat Construction Company" class="h-12 w-auto" />
+    <!-- NAVBAR -->
+    <header
+      class="fixed reveal inset-x-0 top-0 z-50 backdrop-blur-md bg-gray-900/20 border-b border-white/10 transition-all duration-300">
+      <nav class="mx-auto max-w-7xl flex items-center justify-between px-6 py-4 lg:px-8">
+
+        <!-- Logo -->
+        <div class="flex items-center">
+          <a href="/" class="flex items-center gap-2">
+            <span class="text-2xl font-extrabold tracking-wide text-primary">
+              GOSHEN
+            </span>
+          </a>
+        </div>
+
+
+        <!-- Desktop Menu -->
+        <div class="hidden lg:flex items-center gap-x-10">
+          <a href="#about"
+            class="text-sm font-semibold text-white/90 hover:text-white transition relative after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-white after:transition-all hover:after:w-full">
+            About Us
+          </a>
+          <a href="#services"
+            class="text-sm font-semibold text-white/90 hover:text-white transition relative after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-white after:transition-all hover:after:w-full">
+            Services
+          </a>
+          <a href="#projects"
+            class="text-sm font-semibold text-white/90 hover:text-white transition relative after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-white after:transition-all hover:after:w-full">
+            Projects
+          </a>
+          <a href="#sectors"
+            class="text-sm font-semibold text-white/90 hover:text-white transition relative after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-white after:transition-all hover:after:w-full">
+            Sectors
+          </a>
+          <a href="#contact"
+            class="text-sm font-semibold text-white/90 hover:text-white transition relative after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-white after:transition-all hover:after:w-full">
+            Contact
+          </a>
+        </div>
+
+        <!-- CTA -->
+        <div class="hidden lg:flex">
+          <a href="#contact"
+            class="border border-white/30 px-6 py-2.5 text-sm font-semibold text-white hover:bg-white/10 transition">
+            Request Consultation
           </a>
         </div>
 
         <!-- Mobile Menu Button -->
-        <div class="flex lg:hidden">
-          <button type="button" command="show-modal" commandfor="mobile-menu"
-            class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-200 hover:bg-white/10">
-            <span class="sr-only">Open main menu</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"
-              class="size-6">
+        <div class="lg:hidden">
+          <button command="show-modal" commandfor="mobile-menu"
+            class="inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-white/10">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-6 w-6">
               <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
             </svg>
           </button>
         </div>
 
-        <!-- Desktop Menu -->
-        <div class="hidden lg:flex lg:gap-x-12">
-          <a href="#about" class="text-sm font-semibold text-white hover:text-indigo-300 transition">About Us</a>
-          <a href="#services" class="text-sm font-semibold text-white hover:text-indigo-300 transition">Services</a>
-          <a href="#projects" class="text-sm font-semibold text-white hover:text-indigo-300 transition">Projects</a>
-          <a href="#sectors" class="text-sm font-semibold text-white hover:text-indigo-300 transition">Sectors</a>
-          <a href="#contact" class="text-sm font-semibold text-white hover:text-indigo-300 transition">Contact</a>
-        </div>
-
-        <!-- Desktop CTA -->
-        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#contact"
-            class="border border-white/30 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition">
-            Request a Consultation
-          </a>
-        </div>
       </nav>
-
-      <!-- Mobile Menu Dialog (unchanged, but fixed minor inconsistencies) -->
-      <dialog id="mobile-menu" class="backdrop:bg-black/50 lg:hidden open:hidden">
-        <div class="fixed inset-0 z-50">
-          <div
-            class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-            <div class="flex items-center justify-between">
-              <a href="#" class="-m-1.5 p-1.5">
-                <img src="/Logo.png" alt="Goshen Habitat Construction Company" class="h-12 w-auto" />
-              </a>
-              <button type="button" command="close" commandfor="mobile-menu"
-                class="-m-2.5 rounded-md p-2.5 text-gray-200 hover:bg-white/10">
-                <span class="sr-only">Close menu</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"
-                  class="size-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-            <div class="mt-8 flow-root">
-              <div class="-my-6 divide-y divide-gray-500/10">
-                <div class="space-y-2 py-6">
-                  <a href="#about"
-                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-white hover:bg-white/10">About
-                    Us</a>
-                  <a href="#services"
-                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-white hover:bg-white/10">Services</a>
-                  <a href="#projects"
-                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-white hover:bg-white/10">Projects</a>
-                  <a href="#sectors"
-                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-white hover:bg-white/10">Sectors</a>
-                  <a href="#contact"
-                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-white hover:bg-white/10">Contact</a>
-                </div>
-                <div class="py-6">
-                  <a href="#contact"
-                    class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold text-white bg-indigo-600 hover:bg-indigo-500">
-                    Request a Consultation
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </dialog>
     </header>
 
-    <!-- Hero Content -->
-    <div class="relative isolate px-6 pt-32 pb-24 lg:px-8">
-      <div class="mx-auto max-w-3xl text-center">
+    <!-- HERO CONTENT -->
+    <section class="relative reveal isolate px-6 pt-40 pb-28 lg:px-8">
+      <div class="mx-auto max-w-4xl text-center">
+
+        <!-- Badge -->
         <div class="mb-8 flex justify-center">
-          <p
-            class="inline-flex items-center bg-primary/10 px-4 py-1 text-sm font-medium text-white ring-1 ring-inset ring-primary/20">
+          <span
+            class="inline-flex items-center  bg-primary/10 px-4 py-1 text-sm font-medium text-white ring-1 ring-inset ring-primary/30">
             Trusted Nigerian Architectural & Construction Firm
-          </p>
+          </span>
         </div>
 
+        <!-- Heading -->
         <h1 class="text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
-          Delivering Landmark<br>Construction Projects<br>Across Nigeria
+          Delivering Landmark<br />
+          Construction Projects<br />
+          Across Nigeria
         </h1>
 
+        <!-- Description -->
         <p class="mt-8 text-lg leading-8 text-gray-300 max-w-2xl mx-auto">
-          We are an architectural and construction firm delivering residential, commercial, hospitality, and
-          institutional projects across Nigeria. Our work combines sound engineering, functional design, and disciplined
-          project execution.
+          We are an architectural and construction firm delivering residential, commercial,
+          hospitality, and institutional developments across Nigeria through sound engineering,
+          disciplined execution, and functional design.
         </p>
 
+        <!-- CTA Buttons -->
         <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6">
           <a href="#contact"
             class="bg-primary px-8 py-4 text-lg font-semibold text-white shadow-lg hover:bg-white hover:text-primary transition">
@@ -131,17 +113,21 @@
           </a>
           <a href="#projects"
             class="text-lg font-semibold text-white hover:text-primary transition flex items-center gap-2">
-            View Completed Projects <span aria-hidden="true">→</span>
+            View Completed Projects →
           </a>
         </div>
+
       </div>
-    </div>
+    </section>
+
   </div>
+
+
   <section class="py-24 sm:py-32 bg-white">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-24 items-center">
         <div>
-          <div class="relative max-w-7xl pl-12">
+          <div class=" reveal max-w-7xl pl-12">
             <!-- Vertical Label -->
             <h2
               class="absolute left-0 top-2 rotate-180 text-sm font-bold uppercase tracking-[0.3em] text-primary [writing-mode:vertical-rl]">
@@ -149,19 +135,19 @@
             </h2>
 
             <!-- Main Heading -->
-            <p class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl leading-tight">
+            <p class="text-4xl reveal font-bold tracking-tight text-gray-900 sm:text-5xl leading-tight">
               Who We Are,
               <span class="block text-primary mt-2">
                 with an individual approach
               </span>
             </p>
           </div>
-          <p class="mt-6 text-lg leading-8 text-gray-600">
+          <p class="mt-6 reveal text-lg leading-8 text-gray-600">
             Goshen Habitat Concept Limited is a duly registered architectural and construction company under the
             Corporate Affairs Commission (CAC) of the Federal Republic of Nigeria, in accordance with the Companies and
             Allied Matters Act (CAMA), 1990. </p>
 
-          <p class="mt-6 text-lg leading-8 text-gray-600">We are an established firm with a strong commitment to
+          <p class="mt-6 reveal text-lg leading-8 text-gray-600">We are an established firm with a strong commitment to
             excellence, delivering high-quality architectural,
             construction, and project delivery solutions across Nigeria. At Goshen Habitat Concept Limited, quality,
             integrity, and client satisfaction remain at the core of everything we do. We never compromise on standards,
@@ -279,7 +265,7 @@
         </p>
 
         <!-- Description -->
-        <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+        <p class="mt-6 reveal text-lg text-gray-600 leading-relaxed">
           End-to-end architectural, construction, and project delivery services for
           residential, commercial, hospitality, and institutional developments
           across Nigeria.
@@ -309,7 +295,7 @@
             <h3 class="text-xl font-semibold text-gray-900 group-hover:text-primary transition-colors">
               Architectural Design & Planning
             </h3>
-            <p class="mt-2 text-gray-600 leading-relaxed">
+            <p class="mt-2 reveal text-gray-600 leading-relaxed">
               Concept design, space planning, working drawings, and statutory approvals
               tailored to Nigerian regulations and site conditions.
             </p>
@@ -335,7 +321,7 @@
             <h3 class="text-xl font-semibold text-gray-900 group-hover:text-primary transition-colors">
               Construction & Building Works
             </h3>
-            <p class="mt-2 text-gray-600 leading-relaxed">
+            <p class="mt-2 reveal text-gray-600 leading-relaxed">
               Complete construction delivery from foundation to final handover,
               ensuring quality workmanship, safety, and timely execution.
             </p>
@@ -363,7 +349,7 @@
             <h3 class="text-xl font-semibold text-gray-900 group-hover:text-primary transition-colors">
               Engineering & Structural Works
             </h3>
-            <p class="mt-2 text-gray-600 leading-relaxed">
+            <p class="mt-2 reveal text-gray-600 leading-relaxed">
               Reinforced concrete, structural systems, and civil works designed for
               safety, durability, and long-term performance.
             </p>
@@ -389,7 +375,7 @@
             <h3 class="text-xl font-semibold text-gray-900 group-hover:text-primary transition-colors">
               Project Management
             </h3>
-            <p class="mt-2 text-gray-600 leading-relaxed">
+            <p class="mt-2 reveal text-gray-600 leading-relaxed">
               Cost control, scheduling, contractor coordination, and progress reporting
               to ensure efficient and transparent project delivery.
             </p>
@@ -417,7 +403,7 @@
             <h3 class="text-xl font-semibold text-gray-900 group-hover:text-primary transition-colors">
               Renovation, Remodeling & Expansion
             </h3>
-            <p class="mt-2 text-gray-600 leading-relaxed">
+            <p class="mt-2 reveal text-gray-600 leading-relaxed">
               Upgrades, refurbishments, and expansions executed with minimal disruption
               and consistent quality standards.
             </p>
@@ -446,7 +432,7 @@
             <h3 class="text-xl font-semibold text-gray-900 group-hover:text-primary transition-colors">
               Consultancy & Advisory
             </h3>
-            <p class="mt-2 text-gray-600 leading-relaxed">
+            <p class="mt-2 reveal text-gray-600 leading-relaxed">
               Feasibility studies, cost estimates, technical reviews, and advisory
               services to support informed project decisions.
             </p>
@@ -469,14 +455,14 @@
             </h2>
 
             <!-- Main Heading -->
-            <h2 class="text-4xl font-bold tracking-tight text-white sm:text-5xl">
+            <h2 class="text-4xl reveal font-bold tracking-tight text-white sm:text-5xl">
               Partner with Goshen Habitat
-              <span class="block text-primary mt-2">
+              <span class="block reveal text-primary mt-2">
                 for Your Next Project
               </span>
             </h2>
             <!-- Description -->
-            <p class="mt-8 text-lg leading-8 text-white">
+            <p class="mt-8 reveal text-lg leading-8 text-white">
               We deliver exceptional architectural and construction services tailored to your vision, combining
               innovative
               design, rigorous engineering, and disciplined execution across Nigeria.
@@ -647,13 +633,13 @@
       </div>
     </div>
   </section>
-  <section id="process-section" class="relative h-screen overflow-hidden bg-cover bg-center"
-    style="background-image: url('/img.jpg');">
+  <section id="process-section" class="relative bg-cover bg-center"
+    style="background-image: url('/img.jpg'); background-attachment: fixed;">
     <!-- Overlay -->
     <div class="absolute inset-0 bg-white/90"></div>
 
     <!-- Scrollable content -->
-    <div id="process-scroll" class="relative h-full overflow-y-auto px-6 py-24 lg:py-32">
+    <div id="process-scroll" class="relative  px-6 py-24 lg:py-32">
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <!-- Section Header -->
         <div class="relative max-w-7xl pl-12">
